@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+@theme{
+    --font-primary:"Inter";
+    --breakpoint-xs:440px;
+}
+@layer base{
+    body{
+        font-family: var(--font-primary);
+    }
+    .container{
+        @apply mx-auto;
+        @apply px-2 md:px-0;
+    }
+    button{
+        cursor: pointer; 
+    }
+    h1{
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+        font-weight: 700;
+        @variant lg{
+            font-size: 3rem;
+            line-height: 3.75rem;
+            font-weight: 700;
+        }
+    }
+    h2{
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        font-weight: 700;
+    }
+    h3{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+    }
+    h4{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+    }
+    h5{
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 700;
+    }
+    p{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+    }
+}
+@utility row{
+    @apply flex flex-row items-center flex-wrap;
+}
+@utility col{
+    @apply flex flex-col items-center;
+}
+@utility product{
+    @apply col border-2 rounded-2xl border-amber-100 hover:scale-105 hover:shadow-2xl transition-all hover:cursor-pointer pb-2;
+}
+@utility details{
+    @apply w-full justify-around col items-start gap-2 px-4 h-full;
+}
