@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/src/output.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="py-12 bg-amber-50">
+        <div class="container">
+            <div class="row w-full justify-between relative">
+                <button data-menu-toggle type="button" class="menu block md:hidden">
+                    <img src="./assets/img/menu.svg" alt="Menu" />
+                </button>
+                <div class="">
+                    <a href="index.html" class="font-black text-4xl">logo</a>
+                </div>
+                <nav data-nav class="hidden data-open:block absolute top-full inset-x-0 data-open:bg-amber-50/90 shadow-lg
+                    lg:block lg:static lg:bg-transparent lg:shadow-none z-50">
+                    <ul class="col gap-12 py-8 lg:py-0 lg:row lg:gap-8 trxt-inverted max-lg:font-bold max-lg:text-lg">
+                        <li><a href="./index.html" class="hover:font-bold hover:underline">Home</a></li>
+                        <li><a href="./products.html" class="hover:font-bold hover:underline">Products</a></li>
+                        <li><a href="./about.html" class="hover:font-bold hover:underline">About</a></li>
+                        <li><a href="./blog.html" class="hover:font-bold hover:underline">Blog</a></li>
+                    </ul>
+                </nav>
+                <input type="text" placeholder="Search Item" class="border-2 border-gray-400 rounded-md pl-4 py-2 bg-amber-500/20">
+            </div>
+        </div>
+    </header>
+    <section class="hero container py-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 items-start">
+            <div data-nav-category class="hidden md:col col-span-1 gap-2 justify-start w-full text-left
+            data-open:block data-open:w-full data-open:col-span-full data-open:bg-white data-open:absolute z-50 data-open:py-12 data-open:text-center inset-x-0">
+                <h2 class="w-full ml-2 mt-2">Categories</h2>
+                <div data-categories class="col gap-4 items-center justify-start px-4 w-full">
+
+                </div>
+            </div>
+            <div class="products md:col-span-2 lg:col-span-4">
+                <div data-products class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                </div>
+            </div>
+        </div>
+
+    </section>
+    
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.21.1/axios.min.js" integrity="sha512-YiweniDPqprdTP7mvKVpKWv3jMGTY9frHzOTmDqbutoqcypYCRo8nfKhhDKnSiXTTMN0kBrDtTozIlM11wqcAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/products.js"></script>
+</body>
+</html>

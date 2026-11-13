@@ -1,17 +1,8 @@
-
-async function getCategories(){
-    const response= await axios.get("https://dummyjson.com/products/categories")
-    console.log(response.data);
-    const categoriesData= response.data;
-    const result =categoriesData.map(category => {
-            return `
-                <div class="row">
-                    <button type="submit" class="text-md font-medium hover:font-bold hover:text-blue-700 hover:cursor-pointer transition-all">${category.slug}</button>
-                </div>
-            `
-        }).join('');
-        document.querySelector("[data-categories]").innerHTML = result;
-}
+const menuToggle= document.querySelector("[data-menu-toggle]");
+const nav= document.querySelector("[data-nav]");
+menuToggle.addEventListener("click",()=>{
+    nav.toggleAttribute("data-open");
+});
 async function getProducts(){
     const response= await axios.get("https://dummyjson.com/products")
     console.log(response.data.products);
@@ -24,7 +15,7 @@ async function getProducts(){
             return `
             <div class="product overflow-hidden">
                 <div class="relative bg-amber-50">
-                    <img src=${product.images[0]} class="w-full h-full" alt="">
+                    <img src=${product.thumbnail} class="w-full h-full" alt="">
                     <span class="bg-amber-500 px-1 rounded-4xl absolute z-20 top-2 left-2 text-sm">${discount}%</span>
                 </div>
                 <div class="details">
@@ -43,7 +34,6 @@ async function getProducts(){
         document.querySelector("[data-products]").innerHTML = result;
 }
 async function getData() {
-    await getCategories();
     await getProducts();
 }
 getData();
